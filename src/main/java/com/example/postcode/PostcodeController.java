@@ -27,8 +27,7 @@ public class PostcodeController {
     
     @GetMapping("/postcode-range")
     PostcodeResponseDTO getPostcodeNamesWithinCodeRange(
-        @RequestParam 
-        @Min(value=0, message="Code should be within 0 and 9999") Integer start, 
+        @RequestParam @Min(value=0, message="Code should be within 0 and 9999") Integer start, 
         @RequestParam @Max(value=9999, message="Code should be within 0 and 9999") Integer end) {
             return postcodeService.getPostcodeNamesWithinCodeRange(start, end);
     }
